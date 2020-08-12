@@ -15,7 +15,7 @@ class CoinFlip(MycroftSkill):
 	    #self.speak_dialog("response", data=result)
             pass
         except:
-            #self.speak_dialog("error")
+            self.speak_dialog('flip.coin', data={'side': "Fehler"})
 
 def create_skill():
     return CoinFlip()
