@@ -9,13 +9,10 @@ class CoinFlip(MycroftSkill):
     def handle_flip_coin(self, message):
         try:
             coin = ["head", "tail"]
-            side = random.choice(coin)
-            #result = {'side': message.data.get("side")}
-            self.speak_dialog('flip.coin', data={'side': side})
-	    #self.speak_dialog("response", data=result)
+            self.speak_dialog('flip.coin', data={'side': random.choice(coin)})
             pass
         except:
-            self.speak_dialog('flip.coin', data={'side': "Fehler"})
+            self.speak_dialog('error')
 
 def create_skill():
     return CoinFlip()
