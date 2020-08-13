@@ -8,7 +8,7 @@ class CoinFlip(MycroftSkill):
     @intent_file_handler('flip.coin.intent')
     def handle_flip_coin(self, message):
         try:
-            coin = ["head", "number"]
+            coin = ["head", "tail"]
             side = random.choice(coin)
             #result = {'side': message.data.get("side")}
             self.speak_dialog('flip.coin', data={'side': side})
